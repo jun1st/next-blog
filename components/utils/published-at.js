@@ -1,16 +1,18 @@
-import React from 'react'
-import Link from 'next/link'
-import { parse, format } from 'date-fns'
+import React from "react";
+import Link from "next/link";
+import { parse, format } from "date-fns";
 
 function PublishedAt(props) {
-  const { link, date } = props
+  const { link, date } = props;
   return (
     <>
       <Link href={link}>
         <a href={link} className="u-url" mcolor="#aaa" {...props}>
-          <time className="dt-published">
-            {format(parse(date), 'MMMM DD, YYYY')}
-          </time>
+          <small>
+            <time className="dt-published">
+              {format(parse(date), "MMMM DD, YYYY")}
+            </time>
+          </small>
         </a>
       </Link>
       <style jsx>{`
@@ -20,7 +22,7 @@ function PublishedAt(props) {
         }
       `}</style>
     </>
-  )
+  );
 }
 
-export default PublishedAt
+export default PublishedAt;

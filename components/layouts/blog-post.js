@@ -1,17 +1,17 @@
-import Link from 'next/link'
-import { siteMeta } from '../../blog.config'
-import Layout from './default'
-import SyntaxHighlight from '../syntax-highlight'
-import PublishedAt from '../utils/published-at'
-import blogposts from '../../posts/index'
-import NextPrevPost from '../next-prev-post'
+import Link from "next/link";
+import { siteMeta } from "../../blog.config";
+import Layout from "./default";
+import SyntaxHighlight from "../syntax-highlight";
+import PublishedAt from "../utils/published-at";
+import blogposts from "../../posts/index";
+import NextPrevPost from "../next-prev-post";
 
 function BlogPost({ path, meta, children }) {
   const currentPostIndex = blogposts
     .map(({ title }) => title)
-    .indexOf(meta.title)
-  const previousPost = blogposts[currentPostIndex + 1]
-  const nextPost = blogposts[currentPostIndex - 1]
+    .indexOf(meta.title);
+  const previousPost = blogposts[currentPostIndex + 1];
+  const nextPost = blogposts[currentPostIndex - 1];
 
   return (
     <Layout pageTitle={meta.title} ogImage={meta.image}>
@@ -23,7 +23,7 @@ function BlogPost({ path, meta, children }) {
           <div>
             <PublishedAt date={meta.publishedAt} link={path} />
 
-            <Link href="/about">
+            {/* <Link href="/about">
               <a
                 color="#aaa"
                 rel="author"
@@ -32,7 +32,7 @@ function BlogPost({ path, meta, children }) {
               >
                 {siteMeta.author}
               </a>
-            </Link>
+            </Link> */}
           </div>
         </header>
         <div className="e-content">{children}</div>
@@ -62,7 +62,7 @@ function BlogPost({ path, meta, children }) {
           margin-bottom: 2em;
         }
 
-        [rel='author'] {
+        [rel="author"] {
           margin-left: 1em;
         }
 
@@ -80,7 +80,7 @@ function BlogPost({ path, meta, children }) {
         }
       `}</style>
     </Layout>
-  )
+  );
 }
 
-export default BlogPost
+export default BlogPost;

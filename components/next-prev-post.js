@@ -1,13 +1,14 @@
-import PropTypes from 'prop-types'
-import Link from 'next/link'
+import PropTypes from "prop-types";
+import Link from "next/link";
 
 const NextPrevPost = ({ title, path, position }) => {
-  const isNext = position === 'next'
+  const isNext = position === "next";
+  const linkTitle = position === "next" ? "下一篇" : "上一篇";
   return (
     <>
       <Link href={path}>
         <a>
-          <small>Read {position} post </small>
+          <small>{linkTitle}</small>
           {title}
         </a>
       </Link>
@@ -15,18 +16,18 @@ const NextPrevPost = ({ title, path, position }) => {
         a {
           display: flex;
           flex-direction: column;
-          ${isNext ? 'text-align: right;' : ''}
-          ${isNext ? 'grid-column: 2 / 2;' : ''}
+          ${isNext ? "text-align: right;" : ""}
+          ${isNext ? "grid-column: 2 / 2;" : ""}
         }
       `}</style>
     </>
-  )
-}
+  );
+};
 
 NextPrevPost.propTypes = {
   title: PropTypes.string.isRequired,
   path: PropTypes.string.isRequired,
-  position: PropTypes.oneOf(['next', 'previous']),
-}
+  position: PropTypes.oneOf(["next", "previous"])
+};
 
-export default NextPrevPost
+export default NextPrevPost;

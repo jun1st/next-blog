@@ -1,9 +1,9 @@
-import Link from 'next/link'
+import Link from "next/link";
 
 const Nav = () => (
   <nav>
     <Link href="/about">
-      <a>About</a>
+      <a>关于我</a>
     </Link>
     <style jsx>{`
       nav {
@@ -15,6 +15,6 @@ const Nav = () => (
       }
     `}</style>
   </nav>
-)
+);
 
-export default Nav
+export default Nav;

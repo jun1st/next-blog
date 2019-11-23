@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Head from './head'
-import Nav from './nav'
-import Title from './title'
+import React from "react";
+import PropTypes from "prop-types";
+import Head from "./head";
+import Nav from "./nav";
+import Title from "./title";
 
 function Header({ path, pageTitle, ogImage }) {
   return (
@@ -39,8 +39,9 @@ function Header({ path, pageTitle, ogImage }) {
           body {
             margin: 0;
             font-size: 18px;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-              Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+            font-family: Georgia, BlinkMacSystemFont, PingFang SC,
+              Hiragino Sans GB, Microsoft YaHei, helvetica neue, helvetica,
+              ubuntu, roboto, noto, segoe ui, Arial, sans-serif;
             color: #333;
             line-height: 1.5;
             background-color: #fff;
@@ -65,6 +66,10 @@ function Header({ path, pageTitle, ogImage }) {
             font-size: 1.8rem;
           }
 
+          h2 a {
+            color: #292525;
+          }
+
           h3 {
             margin-top: 1.5rem;
             font-size: 1.5rem;
@@ -83,7 +88,6 @@ function Header({ path, pageTitle, ogImage }) {
           }
 
           a {
-            color: #33e;
             cursor: pointer;
           }
 
@@ -125,6 +129,10 @@ function Header({ path, pageTitle, ogImage }) {
             margin-right: auto;
           }
 
+          article {
+            color: #4c4e4d;
+          }
+
           article img {
             max-width: 100%;
             height: auto;
@@ -132,13 +140,13 @@ function Header({ path, pageTitle, ogImage }) {
         `}
       </style>
     </>
-  )
+  );
 }
 
 Header.propTypes = {
   path: PropTypes.string,
   pageTitle: PropTypes.string,
-  ogImage: PropTypes.string,
-}
+  ogImage: PropTypes.string
+};
 
-export default Header
+export default Header;
