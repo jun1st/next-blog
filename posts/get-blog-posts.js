@@ -21,20 +21,12 @@ module.exports = files
     const meta = eval("(" + match[1] + ")");
 
     const publishedAt = new Date(meta.publishedAt);
-    const year = publishedAt.getUTCFullYear();
-    const month = publishedAt.getUTCMonth() + 1;
-    const day = publishedAt.getUTCDate();
+    // const year = publishedAt.getUTCFullYear();
+    // const month = publishedAt.getUTCMonth() + 1;
+    // const day = publishedAt.getUTCDate();
     return {
       ...meta,
-      path:
-        "/" +
-        year +
-        "/" +
-        month +
-        "/" +
-        day +
-        "/" +
-        file.replace(/\.mdx?$/, ""),
+      path: "/posts/" + file.replace(/\.mdx?$/, ""),
       index
     };
   })
