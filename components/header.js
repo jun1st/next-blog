@@ -38,12 +38,11 @@ function Header({ path, pageTitle, ogImage }) {
 
           body {
             margin: 0;
-            font-size: 18px;
-            font-family: Georgia, BlinkMacSystemFont, PingFang SC,
-              Hiragino Sans GB, Microsoft YaHei, helvetica neue, helvetica,
-              ubuntu, roboto, noto, segoe ui, Arial, sans-serif;
+            font-size: 16px;
+            font-family: "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei",
+              sans-serif, "Merriweather", serif;
             color: #333;
-            line-height: 1.5;
+            line-height: 1.85rem;
             background-color: #fff;
           }
 
@@ -51,10 +50,14 @@ function Header({ path, pageTitle, ogImage }) {
           h2,
           h3,
           h4 {
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
             font-weight: bold;
             color: inherit;
-            line-height: 1.25;
+            line-height: 1.4;
+          }
+
+          h3 {
+            margin-bottom: 1rem;
           }
 
           h1 {
