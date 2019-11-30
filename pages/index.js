@@ -7,6 +7,19 @@ import Post from "../components/blog-index-item";
 import blogposts from "../posts/index";
 import { siteMeta } from "../blog.config";
 
+const injectGA = () => {
+  if (typeof window == "undefined") {
+    return;
+  }
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    window.dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-28122135-1");
+};
+
 const Blog = ({ router, page = 1 }) => {
   const paginator = new pagination.SearchPaginator({
     prelink: "/",
@@ -68,6 +81,12 @@ const Blog = ({ router, page = 1 }) => {
           margin-bottom: 3em;
         }
       `}</style>
+      {/* Global site tag (gtag.js) - Google Analytics */}
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=UA-28122135-1"
+      />
+      <script>{injectGA()}</script>
     </Layout>
   );
 };

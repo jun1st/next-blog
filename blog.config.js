@@ -8,6 +8,7 @@ module.exports = {
     social: {
       twitter: "jun1st"
     },
-    postsPerPage: 50
+    postsPerPage: 50,
+    googleAnalyticId: ""
   }
 };
