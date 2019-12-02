@@ -26,6 +26,7 @@ function Header({ path, pageTitle, ogImage }) {
       <style jsx global>
         {`
           html {
+            font-size: 62.5%;
             margin: 0;
             box-sizing: border-box;
           }
@@ -38,11 +39,12 @@ function Header({ path, pageTitle, ogImage }) {
 
           body {
             margin: 0;
-            font-size: 16px;
             font-family: "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei",
               sans-serif, "Merriweather", serif;
-            color: #333;
-            line-height: 1.85rem;
+            color: #3a4145;
+            font-size: 1.7rem;
+            line-height: 1.85em;
+            letter-spacing: 0.01rem;
             background-color: #fff;
           }
 
@@ -51,7 +53,7 @@ function Header({ path, pageTitle, ogImage }) {
           h3,
           h4 {
             margin-bottom: 1rem;
-            font-weight: bold;
+            font-family: "Open Sans", sans-serif;
             color: inherit;
             line-height: 1.4;
           }
@@ -61,12 +63,14 @@ function Header({ path, pageTitle, ogImage }) {
           }
 
           h1 {
-            font-size: 2rem;
+            font-size: 3.6rem;
           }
 
           h2 {
             margin-top: 1rem;
-            font-size: 1.8rem;
+            font-size: 3.6rem;
+            letter-spacing: -1px;
+            text-rendering: geometricPrecision;
           }
 
           h2 a {
