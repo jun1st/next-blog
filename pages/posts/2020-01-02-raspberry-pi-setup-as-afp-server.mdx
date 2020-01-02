@@ -1,0 +1,77 @@
+import { withRouter } from "next/router";
+import BlogPost from "../../components/layouts/blog-post";
+
+export const meta = {
+  published: true,
+  publishedAt: "2020-01-03",
+  title: "把 Raspberry PI 打造成 AFP 服务器",
+  summary:
+    "把移动硬盘挂载到树莓派之后，再需要开启 AFP 服务，才能在 mac 上访问挂载的硬盘",
+  image: "/static/site-feature.png"
+};
+
+export default withRouter(({ children, router }) => (
+  <BlogPost path={router.pathname} meta={meta}>
+    {children}
+  </BlogPost>
+));
+
+## 什么是 AFP
+
+什么是 AFP？ AFP 是 Apple Filing Protocol， 也称为 Apple 文件协议，Apple 归档协议，他是一个私有的网络协议，是苹果文件系统的一部分。
+
+因此需要安装专门的库来支持 AFP
+
+## Install Netatalk
+
+Netatalk 是一个开源的 AFP 实现，
+
+```bash
+sudo apt install Netatalk
+```
+
+## 配置 AFP
+
+```bash
+sudo vi /etc/netatalk/afp.conf
+```
+
+修改配置文件，
+
+```bash
+;
+; Netatalk 3.x configuration file
+;
+
+[Global]
+; Global server settings
+  guest account = pi
+
+[Homes]
+  basedir regex = /home
+
+# 自定义
+[My AFP Volume]
+  path = /media/
+
+# 自定义
+
+[My AFP Share Name]
+  path = /mnt/share/
+
+; [My Time Machine Volume]
+; path = /path/to/backup
+; time machine = yes
+```
+
+可以自定义想要通过 AFP 分享出来的文件夹
+
+```bash
+sudo systemctl restart netatalk
+```
+
+## Connect To Server
+
+通过 Mac Finder 来访问: Go -> Connect To Server
+
+![connect to afp](/static/images/afp.jpg)
