@@ -39,8 +39,8 @@ function Header({ path, pageTitle, ogImage }) {
 
           body {
             margin: 0;
-            font-family: "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei",
-              sans-serif, "Merriweather", serif;
+            font-family: Helvetica, "Hiragino Sans GB", "Heiti SC",
+              "Microsoft YaHei", sans-serif, "Merriweather", serif;
             color: #3a4145;
             font-size: 1.7rem;
             line-height: 1.85em;
